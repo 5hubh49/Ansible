@@ -1,0 +1,12 @@
+   79  2019-09-06 14:35:16 git clone https://github.com/5hubh49/Ansible.git
+  169  2019-09-06 15:47:23 git add ansible-his
+  170  2019-09-06 15:48:04 git commit -am "this is my first comment"
+  171  2019-09-06 15:50:17 git config --global user.email "shubhagsaxena@gmail.com"
+  172  2019-09-06 15:50:33 git commit --amend --reset-author 
+  173  2019-09-06 15:51:12 git commit -am "this is my second comment"
+  174  2019-09-06 15:51:31 git add 
+  176  2019-09-06 15:51:59 git add ansible-his
+  177  2019-09-06 15:52:11 git commit -am "this is my second comment"
+  178* 2019-09-06 15:52:56 git add ansible
+  179  2019-09-06 15:57:07 git push -u origin master
+  180  2019-09-06 15:59:23 history | grep git > git-hist
