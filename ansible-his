@@ -1,0 +1,64 @@
+   78  2019-09-06 14:32:49 pip install ansible
+   81  2019-09-06 14:40:44 subscription-manager repos --enable rhel-7-server-ansible-VERSION-rpms
+   84  2019-09-06 14:41:11 subscription-manager repos --list | grep ansible
+   87  2019-09-06 14:43:11 subscription-manager repos --enable rhel-7-server-ansible-2.6-rpms
+   91  2019-09-06 14:44:44 ansible --version
+   92  2019-09-06 14:45:49 touch ansible.cfg
+   93  2019-09-06 14:45:55 ansible --version
+   94  2019-09-06 14:48:50 ansible localhost -m ping
+   95  2019-09-06 14:52:50 ansible localhost -m ping -i inventory
+   96  2019-09-06 15:04:13 ansible localhost -m ping
+   97  2019-09-06 15:04:50 ansible localhost -m ping -vvv
+   98  2019-09-06 15:04:57 ansible localhost -m ping -vvvvvvvvvvv
+   99  2019-09-06 15:05:03 ansible localhost -m ping
+  100  2019-09-06 15:08:44 ansible localhost -m copy -a "content='ansible is awesome' dest=./motd"
+  101  2019-09-06 15:11:03 ansible localhost -m command -a "echo 'ansible is awesome' > ./motd"
+  102  2019-09-06 15:12:12 ansible-doc linefile
+  103  2019-09-06 15:12:22 ansible-doc lineinfile
+  104  2019-09-06 15:13:22 ansible localhost -m lineinfile -a "echo 'ansible is awesome' > ./motd"
+  105  2019-09-06 15:13:34 ansible localhost -m lineinfile -a "'ansible is awesome' > ./motd"
+  106  2019-09-06 15:13:39 ansible-doc linefile
+  107  2019-09-06 15:13:43 ansible-doc lineinfile
+  108  2019-09-06 15:14:14 ansible localhost -m line -a "'ansible is awesome' > ./motd"
+  109  2019-09-06 15:14:30 ansible localhost -m linein file -a "'ansible is awesome' > ./motd"
+  110  2019-09-06 15:14:36 ansible localhost -m lineinfile -a "'ansible is awesome' > ./motd"
+  111  2019-09-06 15:15:09 ansible localhost -m lineinfile -a "echo > 'ansible is awesome' > ./motd"
+  112  2019-09-06 15:15:47 ansible localhost -m lineinfile -a "'ansible is awesome'  ./motd"
+  113  2019-09-06 15:16:00 ansible localhost -m lineinfile -a "'ansible is awesome'  path=./motd"
+  114  2019-09-06 15:16:25 ansible localhost -m lineinfile -a "line='ansible is awesome'  path=./motd"
+  115  2019-09-06 15:17:46 ansible localhost -m lineinfile -a "line='ansible is superawesome'  path=./motd"
+  116  2019-09-06 15:18:15 ansible-doc lineinfile
+  117  2019-09-06 15:19:07 ansible localhost -regexp -m lineinfile -a "line='ansible is superawesome'  path=./motd"
+  118  2019-09-06 15:19:19 ansible localhost  -m lineinfile -a "line='ansible is superawesome'  path=./motd" -regexp
+  119* 2019-09-06 15:19:23 ansible localhost  -m lineinfile -a "line='ansible is superawesome'  path=./motd" 
+  120  2019-09-06 15:19:37 ansible localhost  -m lineinfile --regex "line='ansible is superawesome'  path=./motd" 
+  121  2019-09-06 15:20:10 ansible-doc lineinfile
+  123  2019-09-06 15:22:22 ansible localhost  -m lineinfile --regex "regexp='ansible is superawesome'  path=./motd" 
+  124  2019-09-06 15:22:28 ansible localhost  -m lineinfile -a "regexp='ansible is superawesome'  path=./motd" 
+  125  2019-09-06 15:22:53 ansible localhost  -m lineinfile -a "line regexp='ansible is superawesome'  path=./motd" 
+  126  2019-09-06 15:23:00 ansible localhost  -m lineinfile -a "lineregexp='ansible is superawesome'  path=./motd" 
+  127  2019-09-06 15:23:06 ansible localhost  -m lineinfile -a "regexp='ansible is superawesome'  path=./motd" 
+  128  2019-09-06 15:23:38 ansible localhost  -m lineinfile -a "regexp='line='ansible is superawesome''  path=./motd" 
+  129  2019-09-06 15:23:53 ansible-doc lineinfile
+  130  2019-09-06 15:24:59 ansible localhost  -m lineinfile -a "line='ansible is superawesome'  path=./motd" 
+  131  2019-09-06 15:25:07 ansible-doc lineinfile
+  132  2019-09-06 15:25:25 ansible localhost  -m lineinfile -ra "line='ansible is superawesome'  path=./motd" 
+  133  2019-09-06 15:25:43 ansible localhost  -m lineinfile -a "line='ansible is superawesome' -r  path=./motd" 
+  134  2019-09-06 15:25:51 ansible-doc lineinfile
+  135  2019-09-06 15:26:23 ansible localhost  -m lineinfile -a "line='ansible is superawesome regexp=cool'  path=./motd" 
+  137  2019-09-06 15:27:20 ansible localhost  -m lineinfile -a "line='ansible is superawesome' regexp='cool'  path=./motd" 
+  139  2019-09-06 15:27:58 ansible localhost  -m lineinfile -a "line='ansible is superawesome' regexp='cooler'  path=./motd" 
+  141  2019-09-06 15:28:18 ansible localhost  -m lineinfile -a "regexp='cooler'  path=./motd" 
+  142  2019-09-06 15:28:57 ansible localhost  -m lineinfile -a "line='ansible is superawesome' "regexp='cooler''  path=./motd" 
+  143  2019-09-06 15:29:03 ansible localhost  -m lineinfile -a "line='ansible is superawesome' "regexp='cooler'"  path=./motd" 
+  145  2019-09-06 15:29:46 ansible localhost  -m lineinfile -a "regexp='cool' line='ansible is superawesome'  path=./motd" 
+  147  2019-09-06 15:29:59 ansible localhost -m lineinfile -a "regexp='cool' line='ansible is superawesome'  path=./motd" 
+  149  2019-09-06 15:30:26 ansible localhost -m lineinfile -a regexp='cool' "line='ansible is superawesome'  path=./motd" 
+  150  2019-09-06 15:31:03 ansible localhost -m lineinfile -a --regexp=cool "line='ansible is superawesome'  path=./motd" 
+  151* 2019-09-06 15:31:15 ansible localhost -m lineinfile -a "line='ansible is superawesome'  path=./motd" 
+  152  2019-09-06 15:31:47 ansible-doc 
+  153  2019-09-06 15:32:35 ansible localhost  -m lineinfile -a "line='ansible is superawesome' "regexp='cooler'"  path=./motd" 
+  154  2019-09-06 15:32:55 ansible localhost  -m lineinfile -a "line='ansible is superawesome' regexp='cooler'  path=./motd" 
+  156  2019-09-06 15:34:34 ansible localhost  -m lineinfile -a "regexp='ansible is superawesome' line='cooler'  path=./motd" 
+  158  2019-09-06 15:35:41 touch ansible-his
+  159  2019-09-06 15:36:02 history | grep ansible > ansible-his 
