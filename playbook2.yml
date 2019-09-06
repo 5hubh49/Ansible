@@ -1,0 +1,15 @@
+---
+- name: install the latest version of Apache
+  hosts: all
+  gather_facts: False
+  tasks: 
+  - name: install httpd pkg
+    yum:    
+      name: httpd   
+      state: present
+
+  - name: ensure a list of packages installed
+    service:
+     name: httpd
+     state: started
+
